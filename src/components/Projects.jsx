@@ -14,7 +14,7 @@ const Projects = () => {
             title: "Memecoin Web3",
             description: "A cryptocurrency platform designed for meme enthusiasts",
             tech: ["React", "Node.js", "MongoDB"],
-            image: "/project1.png",
+            image: "./project1.png",
             category: 'Web',
             link: "https://memecoin-woad.vercel.app/",
          
