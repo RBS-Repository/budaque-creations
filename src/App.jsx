@@ -18,12 +18,20 @@ const App = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Simulate loading time
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 2000); // Adjust time as needed
+        // Add window load event to ensure all assets are loaded
+        const handleLoad = () => {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
+        };
 
-        return () => clearTimeout(timer);
+        if (document.readyState === 'complete') {
+            handleLoad();
+        } else {
+            window.addEventListener('load', handleLoad);
+        }
+
+        return () => window.removeEventListener('load', handleLoad);
     }, []);
 
     return (
@@ -35,7 +43,7 @@ const App = () => {
                     <Navbar />
                     <Hero />
                     <Marquee />
-                   
+              
                     <About />
                     <WhatWeDo />
                     <HowWeWork />

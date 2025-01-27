@@ -139,7 +139,7 @@ const VideoIntro = () => {
                             <video
                                 ref={videoRef}
                                 src={demoVideo}
-                                poster="/rits.png"
+                                poster="./rits.png"
                                 onClick={handleVideoControl}
                                 playsInline
                                 loop

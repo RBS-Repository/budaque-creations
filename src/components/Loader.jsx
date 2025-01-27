@@ -12,35 +12,40 @@ const Loader = () => {
                 exit={{ opacity: 0 }}
                 key="loader"
             >
-                <div className="loader-content">
-                    <motion.div 
-                        className="loader-circle"
-                        animate={{ 
-                            scale: [1, 1.2, 1],
-                            rotate: [0, 360],
-                        }}
+                <motion.div 
+                    className="loader-content"
+                    initial={{ scale: 0.8 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="loader-circle">
+                        <motion.span 
+                            className="loader-text"
+                            animate={{ 
+                                scale: [1, 1.1, 1],
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            BMMC
+                        </motion.span>
+                    </div>
+                    <motion.p 
+                        className="loading-text"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{
                             duration: 2,
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
                     >
-                        <span className="loader-text">BMMC</span>
-                    </motion.div>
-                    <motion.p 
-                        className="loading-text"
-                        animate={{ 
-                            opacity: [0.5, 1, 0.5],
-                        }}
-                        transition={{
-                            duration: 1.5,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                    >
-                        Loading...
+                        Loading Experience
                     </motion.p>
-                </div>
+                </motion.div>
             </motion.div>
         </AnimatePresence>
     );
