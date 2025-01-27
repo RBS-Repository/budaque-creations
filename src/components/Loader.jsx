@@ -43,7 +43,7 @@ const Loader = () => {
                             ease: "easeInOut"
                         }}
                     >
-                        Loading Experience
+                        Loading...
                     </motion.p>
                 </motion.div>
             </motion.div>
